@@ -368,7 +368,7 @@ class _ExperienceCardState extends State<_ExperienceCard> {
                       ),
                       child: Text(
                         t,
-                        maxLines: 1,
+                        maxLines: Responsive.isMobile(context) ? 2 : 1,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.spaceGrotesk(
                           fontSize: Responsive.isMobile(context) ? 10 : 11,
