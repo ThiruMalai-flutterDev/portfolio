@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/constants.dart';
@@ -61,7 +62,7 @@ class ContactSection extends StatelessWidget {
                       label: 'GitHub',
                       value: AppStrings.github,
                       color: AppColors.purple,
-                      onTap: () => openEmail(),
+                      onTap: () {},
                     ),
                     _ContactCard(
                       icon: Icons.work_outline_rounded,
@@ -90,15 +91,23 @@ class ContactSection extends StatelessWidget {
   Future<void> openEmail() async {
     final Uri emailUri = Uri(
       scheme: 'mailto',
-      path: 'thirum8190@email.com',
-      queryParameters: {
-        'subject': 'Flutter Web Contact',
-        'body': 'Hello, I want to contact you regarding...',
-      },
+      path: 'example@gmail.com',
+      query: 'subject=Hello&body=Hi',
     );
 
-    if (!await launchUrl(emailUri, mode: LaunchMode.platformDefault)) {
-      throw Exception('Could not launch email');
+    if (kIsWeb) {
+      final Uri gmailWeb = Uri.parse(
+        'https://mail.google.com/mail/?view=cm&to=example@gmail.com',
+      );
+
+      // Try Gmail first
+      if (await canLaunchUrl(gmailWeb)) {
+        await launchUrl(gmailWeb);
+      } else {
+        await launchUrl(emailUri);
+      }
+    } else {
+      await launchUrl(emailUri);
     }
   }
 

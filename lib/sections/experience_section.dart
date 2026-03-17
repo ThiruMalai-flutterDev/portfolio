@@ -246,6 +246,8 @@ class _ExperienceCardState extends State<_ExperienceCard> {
                       children: [
                         Text(
                           widget.exp.role,
+                          maxLines: Responsive.isMobile(context) ? 2 : 1,
+                          overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.syne(
                             fontSize: Responsive.isMobile(context) ? 18 : 20,
                             fontWeight: FontWeight.w700,
@@ -255,6 +257,8 @@ class _ExperienceCardState extends State<_ExperienceCard> {
                         const SizedBox(height: 4),
                         Text(
                           widget.exp.company,
+                          maxLines: Responsive.isMobile(context) ? 2 : 1,
+                          overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.spaceGrotesk(
                             fontSize: 14,
                             color: color,
@@ -301,8 +305,10 @@ class _ExperienceCardState extends State<_ExperienceCard> {
             const SizedBox(height: 16),
             Text(
               widget.exp.description,
+              maxLines: Responsive.isMobile(context) ? 3 : 2,
+              overflow: TextOverflow.ellipsis,
               style: GoogleFonts.spaceGrotesk(
-                fontSize: 14,
+                fontSize: Responsive.isMobile(context) ? 12 : 14,
                 color: AppColors.textSecondary,
                 height: 1.7,
               ),
@@ -325,9 +331,11 @@ class _ExperienceCardState extends State<_ExperienceCard> {
                             const SizedBox(width: 6),
                             Text(
                               a,
-                              maxLines: 2,
+                              maxLines: Responsive.isMobile(context) ? 2 : 1,
+                              overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.spaceGrotesk(
-                                fontSize: 13,
+                                fontSize:
+                                    Responsive.isMobile(context) ? 12 : 13,
                                 color: AppColors.textSecondary,
                               ),
                             ),
@@ -360,8 +368,10 @@ class _ExperienceCardState extends State<_ExperienceCard> {
                       ),
                       child: Text(
                         t,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.spaceGrotesk(
-                          fontSize: 11,
+                          fontSize: Responsive.isMobile(context) ? 10 : 11,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textSecondary,
                         ),
