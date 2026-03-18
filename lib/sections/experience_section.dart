@@ -46,9 +46,9 @@ class ExperienceSection extends StatelessWidget {
     final experiences = [
       const _ExperienceData(
         role: 'Flutter Developer',
-        company: 'CityMobile',
-        period: '2022 — Present',
-        duration: '2+ Years',
+        company: 'TOUCHTiER TECHNOLOGY',
+        period: '2024 — Present',
+        duration: '2 Years',
         type: 'Full-time',
         description:
             'Developed full-stack Flutter frontends for mobile diagnostic and recycling apps. Built hardware-testing workflows, diagnostic API integrations, and pickup-scheduling UIs for Android and iOS.',
@@ -63,10 +63,10 @@ class ExperienceSection extends StatelessWidget {
       ),
       const _ExperienceData(
         role: 'Flutter Developer',
-        company: 'Club app Project',
-        period: '2021 — 2022',
+        company: 'Brazien Technologies Private Limited',
+        period: '2023 — 2024',
         duration: '1 Year',
-        type: 'Contract',
+        type: 'Full-time',
         description:
             'Supported frontend development and API integration for a sports management mobile application. Focused on implementing UI screens and managing complex app state.',
         achievements: [
@@ -79,13 +79,13 @@ class ExperienceSection extends StatelessWidget {
         color: AppColors.purple,
       ),
       const _ExperienceData(
-        role: 'Flutter Developer Intern',
-        company: 'Software Development Internship',
-        period: '2021',
-        duration: '6 Months',
-        type: 'Internship',
+        role: 'Flutter Developer',
+        company: 'TeckZy Research Analytics IT Solutions Pvt. Ltd.',
+        period: '2022 — 2023',
+        duration: '1 Year',
+        type: 'Full-time',
         description:
-            'Started my professional Flutter journey during an internship focused on mobile development fundamentals, clean architecture patterns, and building my first production-grade apps.',
+            'Started my professional Flutter journey during focused on mobile development fundamentals, clean architecture patterns, and building my first production-grade apps.',
         achievements: [
           'Learned Flutter from fundamentals to production',
           'Built product catalog app with CRUD operations',

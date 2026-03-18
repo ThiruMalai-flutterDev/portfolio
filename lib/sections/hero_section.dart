@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/constants.dart';
 import '../utils/responsive.dart';
 import '../widgets/animated_button.dart';
+import 'dart:html' as html;
 
 class HeroSection extends StatefulWidget {
   final ValueChanged<int> onScrollDown;
@@ -256,6 +257,12 @@ class _HeroSectionState extends State<HeroSection>
               icon: Icons.arrow_forward_ios_rounded,
               onTap: () => widget.onScrollDown(5),
             ),
+            GlowButton(
+              label: 'Resume',
+              icon: Icons.download_rounded,
+              color: AppColors.green,
+              onTap: downloadPdf,
+            ),
           ],
         ),
         const SizedBox(height: 40),
@@ -264,6 +271,14 @@ class _HeroSectionState extends State<HeroSection>
         _buildStatsRow(centered),
       ],
     );
+  }
+
+  void downloadPdf() {
+    final url = 'assets/pdf/thirumalai.pdf';
+
+    html.AnchorElement(href: url)
+      ..setAttribute('download', 'thirumalai.pdf')
+      ..click();
   }
 
   Widget _buildStatsRow(bool centered) {
@@ -412,10 +427,12 @@ class _StatusBadgeState extends State<_StatusBadge>
               height: 8,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.green.withValues(alpha: 0.6 + 0.4 * _pulse.value),
+                color:
+                    AppColors.green.withValues(alpha: 0.6 + 0.4 * _pulse.value),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.green.withValues(alpha: 0.4 * _pulse.value),
+                    color:
+                        AppColors.green.withValues(alpha: 0.4 * _pulse.value),
                     blurRadius: 6,
                     spreadRadius: 2,
                   ),
