@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/">
+  <base href="/portfolio/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Thirumalai S — Flutter Developer Portfolio. Building high-performance cross-platform mobile applications.">
@@ -13,9 +13,10 @@
   <meta property="og:type" content="website">
 
   <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Tomasz.dev">
+  <meta name="apple-mobile-web-app-title" content="Thirumalai.dev">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
@@ -29,8 +30,6 @@
       padding: 0;
       overflow-x: hidden;
     }
-
-    /* Preloader */
     #preloader {
       position: fixed;
       inset: 0;
@@ -41,12 +40,10 @@
       z-index: 9999;
       transition: opacity 0.5s ease;
     }
-
     #preloader.hidden {
       opacity: 0;
       pointer-events: none;
     }
-
     .loader-ring {
       width: 60px;
       height: 60px;
@@ -56,20 +53,15 @@
       border-right-color: #7B2FBE;
       animation: spin 1s linear infinite;
     }
-
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-
-    /* Custom scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0A0A0F; }
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(#00D4FF, #7B2FBE);
       border-radius: 3px;
     }
-
-    /* Selection highlight */
     ::selection {
       background: rgba(0, 212, 255, 0.2);
       color: #fff;
@@ -77,12 +69,10 @@
   </style>
 </head>
 <body>
-  <!-- Preloader -->
   <div id="preloader">
     <div class="loader-ring"></div>
   </div>
 
-  <!-- Flutter app -->
   <script>
     window.addEventListener('flutter-first-frame', function() {
       const preloader = document.getElementById('preloader');
