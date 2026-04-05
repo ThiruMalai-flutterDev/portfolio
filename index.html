@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/portfolio/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Thirumalai S — Flutter Developer Portfolio. Building high-performance cross-platform mobile applications.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thirumalai S — Flutter Developer">
+  <meta property="og:description" content="Building high-performance cross-platform mobile applications with Flutter.">
+  <meta property="og:type" content="website">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Thirumalai.dev">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Thirumalai S — Flutter Developer</title>
+
+  <style>
+    body {
+      background-color: #0A0A0F;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #0A0A0F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    #preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader-ring {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: #00D4FF;
+      border-right-color: #7B2FBE;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0F; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(#00D4FF, #7B2FBE);
+      border-radius: 3px;
+    }
+    ::selection {
+      background: rgba(0, 212, 255, 0.2);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function() {
+      const preloader = document.getElementById('preloader');
+      preloader.classList.add('hidden');
+      setTimeout(() => preloader.remove(), 500);
+    });
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
