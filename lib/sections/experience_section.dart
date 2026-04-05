@@ -47,7 +47,7 @@ class ExperienceSection extends StatelessWidget {
       const _ExperienceData(
         role: 'Flutter Developer',
         company: 'TOUCHTiER TECHNOLOGY',
-        period: '2024 — Present',
+        period: '2024 — 2026',
         duration: '2 Years',
         type: 'Full-time',
         description:
